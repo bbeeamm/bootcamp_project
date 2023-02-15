@@ -8,7 +8,7 @@ CREATE TABLE product (
   PRIMARY key (product_id)); 
  
 INSERT into product VALUEs
-	(1,'Spaghetti',200),
+    (1,'Spaghetti',200),
     (2,'Salad',150),
     (3,'Pizza',350),
     (4,'Chicken soup',100),
@@ -41,7 +41,7 @@ CREATE TABLE customer (
   PRIMARY key (customer_id));
   
 INSERT into customer VALUES
-	(1,'Mercy','Loco'),
+    (1,'Mercy','Loco'),
     (2,'Mark','Soo'),
     (3,'jenie','Kim'),
     (4,'lalisa','backpink'),
@@ -62,7 +62,7 @@ CREATE table orders (
   FOREIGN key (cashier_id) REFERENCES cashier(cashier_id)); 
   
 INSERT INTO orders VALUES
-	  (1,'2022-09-05',1,2,1,2,2),
+    (1,'2022-09-05',1,2,1,2,2),
     (2,'2022-09-05',1,3,2,1,3),
     (3,'2022-10-07',3,1,2,3,1),
     (4,'2022-10-09',4,2,5,4,2),
@@ -81,9 +81,9 @@ WITH sub AS (
    SELECT
   	customer.customer_id,
   	orders.customer_id AS oc,
-    customer.firstname || ' ' || customer.lastname AS 
-    customer_name,
-    product.price * orders.quantity As sales
+    	customer.firstname || ' ' || customer.lastname AS 
+    	customer_name,
+    	product.price * orders.quantity As sales
   from orders
   join customer ON customer.customer_id = orders.customer_id
   join product ON product.product_id = orders.product_id
